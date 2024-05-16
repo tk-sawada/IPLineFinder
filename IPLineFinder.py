@@ -17,11 +17,11 @@ def extract_ip_lines(input_file, output_file):
                     outfile.write(line)
 
 def process_all_files(directory):
-    # ディレクトリ内のすべての.txtファイルを検索
+    # ディレクトリ内のすべての.logファイルを検索
     for filename in os.listdir(directory):
-        if filename.endswith(".txt"):
+        if filename.endswith(".log"):
             input_file_path = os.path.join(directory, filename)
-            output_file_path = os.path.join(directory, f"{os.path.splitext(filename)[0]}_extracted.txt")
+            output_file_path = os.path.join(directory, f"{os.path.splitext(filename)[0]}_extracted.log")
             extract_ip_lines(input_file_path, output_file_path)
 
 # プログラムが配置されているディレクトリのパスを取得
